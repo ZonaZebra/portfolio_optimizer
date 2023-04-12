@@ -8,7 +8,7 @@ The Portfolio Optimizer API provides an interface to optimize a portfolio of ass
 - Response: A welcome message.
 
 ### GET /favicon.ico
-- Description: Returns the favicon for the API.
+- Description: Returns the mascot for the API.
 - Response: A FileResponse containing the favicon.
 
 ### POST /optimize_portfolio

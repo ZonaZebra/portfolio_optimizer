@@ -1,5 +1,5 @@
 reference.txt
-./venv
+/venv
 .DS_Store
 reference.txt
 __pycache__

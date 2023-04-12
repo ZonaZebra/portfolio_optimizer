@@ -1,2 +1,5 @@
 reference.txt
 ./venv
+DS.Store
+reference.txt
+__pycache__

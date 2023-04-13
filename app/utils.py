@@ -7,13 +7,15 @@ from app.config import ALPHA_VANTAGE_API_KEY
 
 logger = logging.getLogger(__name__)
 
+
 def fetch_alpha_vantage_data(symbol, start_date, end_date):
     try:
         url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol={symbol}&apikey={ALPHA_VANTAGE_API_KEY}&outputsize=full&datatype=csv"
         response = requests.get(url)
         response.raise_for_status()
 
-        data = pd.read_csv(io.BytesIO(response.content), index_col="timestamp", parse_dates=True)
+        data = pd.read_csv(io.BytesIO(response.content),
+                           index_col="timestamp", parse_dates=True)
         # Convert `start_date` and `end_date` to datetime objects
         start_date = pd.to_datetime(start_date)
         end_date = pd.to_datetime(end_date)
@@ -32,5 +34,3 @@ def fetch_alpha_vantage_data(symbol, start_date, end_date):
     except Exception as e:
         logger.error(f"Error in fetch_alpha_vantage_data: {e}")
         raise e
-
-# DXMJ7O7ITS7K3JFJ
